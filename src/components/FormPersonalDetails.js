@@ -5,16 +5,15 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-
 export class FormPersonalDetails extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
   };
 
-  back = e=> {
-      e.preventDefault();
-      this.props.prevstep();
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
   };
 
   render() {
@@ -55,16 +54,18 @@ export class FormPersonalDetails extends Component {
               fullWidth
             />
             <br />
+
+            <Button
+              color="secondary"
+              variant="contained"
+              onClick={this.back}
+            >Back</Button>
+
             <Button
               color="primary"
               variant="contained"
               onClick={this.continue}
             >Continue</Button>
-             <Button
-              color="secondary"
-              variant="contained"
-              onClick={this.back}
-            >Back</Button>
           </Dialog>
         </>
       </MuiThemeProvider>
